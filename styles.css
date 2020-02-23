@@ -1,0 +1,32 @@
+body {
+    box-sizing: border-box;
+}
+
+.envelope-wrap {
+    margin-left: 25%;
+    margin-top: 5%;
+    width: 450px;
+    box-shadow: 0 20px 15px 5px #dbdbdb;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.top {
+    box-shadow: 0 -15px 10px -5px #c4c4c4 inset;
+    height: 150px;
+}
+
+.top img {
+    position: relative;
+    top: -50px;
+    box-shadow: 0 20px 15px 5px #dbdbdb inset;
+}
+
+.bottom {
+    padding: 50px 50px;
+    box-shadow: 0 -150px 130px -10px #fafafa inset;
+}
+
+.bottom h3 {
+    margin: 0;
+}

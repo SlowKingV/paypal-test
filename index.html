@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ae3HjDp_90bXQ3NN9RXHXH2GBRvgmF0K0txFXp2T4cPSOu9bk0B5AoMgpnyxVinUupd_JgA-8PA3IMvW&vault=true&currency=MXN"></script>
+
     <div class="envelope-wrap">
         <div class="top">
-            <div class="card"><img src="https://via.placeholder.com/350x200/" alt="subscription image"></div>
+            <div class="card"><img src="https://via.placeholder.com/350x200/a9cf99" alt="subscription image"></div>
         </div>
         <div class="bottom">
             <h3>Monthly Subscription</h3>
             <p>Our current subscription method, get a box full of products each month!</p>
+            <div id="paypal-wrap"></div>
         </div>
     </div>
+
+    <script>
+        paypal.Buttons({
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({'plan_id': 'P-919112487Y947424LLZJNXCQ'});
+            },
+
+
+            onApprove: function(data, actions) {
+                alert('You have successfully created subscription ' + data.subscriptionID);
+            },
+
+            onCancel: function (data) {
+                window.location.replace("./cancel.html")
+            },
+
+            onError: function (err) {
+                alert('Something bad happened :c ')
+            }
+        }).render('#paypal-wrap');
+    </script>
 </body>
 </html>
